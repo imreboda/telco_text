@@ -13,3 +13,9 @@ The attached R scripts look at the Facebook pages of a few Telco and related ven
 - From Rstudio (with Rfacebook installed in previous chapter and included), start fboAuth with the App ID and App Secret parameters obtained in the previous step,
 - Follow the instructions seen on the console. 
 - Save the received token somewhere for later use.
+
+## Script files:
+- The shiny script (app.R) is to be deployed the usual way to shiny
+- The script file should be run regularly, I used Jenkins with daily schedule
+- The DIR variable in both scripts must be set to a directory to store temporary files for operation
+
