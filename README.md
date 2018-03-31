@@ -4,6 +4,10 @@ This is a term assignment of the Unstructured Text Analysis Seminar at CEU in th
 
 The attached R scripts look at the Facebook pages of a few telco and related vendors (to some extent related to telcos' traditional or new business segments), and present / compare their key marketing themes during the past few quarters. Also, does basic sentiment scoring on the comments along the time.
 
+It consists of two R scripts: 
+- one is reading posts and comments from Facebook and doing some text mining,
+- the other is a shiny dashboard app file.
+
 # Installation
 
 ## Facebook App and Token:
@@ -17,5 +21,8 @@ The attached R scripts look at the Facebook pages of a few telco and related ven
 ## Script files:
 - The shiny script (app.R) is to be deployed the usual way to shiny
 - The script file should be run regularly, I used Jenkins with daily schedule
-- The DIR variable in both scripts must be set to a directory to store temporary files for operation
+- The DIR variable in both scripts must be set to the same directory to store temporary files for operation. In the Facebook reader and text mining script (preprocess.R) the Facebook authentication token place must be set (FBOAUTH).
+
+## More:
+at http://imreboda.github.io/
 
