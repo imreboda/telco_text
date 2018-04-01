@@ -103,7 +103,7 @@ VendorPosts <- NULL     #even on small EC2 instance script run from jenkins face
 ######################## PREPARING FOR PRESENTING STUFF 
 library ("rlist")
 stp_spc <- data.table(word = list.append(Vendors,c("goo.gl", "zte", "ibm", "g.co", 
-                                                   "zte’s", "heygoogle", "ibm's",
+                                                   "zte's", "heygoogle", "ibm's",
                                                    "learn", "read", "know", "can")))
 
 
@@ -193,7 +193,7 @@ negation_words <- c("not", "no", "never", "without", "isn't", "aren't")
 tidy_bigram_Comments <- AllPostsComments %>%
   unnest_tokens (bigram, Comment_message, token = "ngrams", n = 2) %>%
   filter(!is.na(bigram)) %>%
-  separate(bigram, c("word1", "word2"), sep = " ") %>%   #storing bigram words separately
+  separate(bigram, c("word1", "word2"), sep = " ") #%>%   #storing bigram words separately
   #  filter(!word1 %in% stp_en$word) %>%
   #  filter(!word2 %in% stp_en$word) %>%
   #  filter(!word1 %in% stp_spc$word) %>%
