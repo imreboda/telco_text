@@ -52,13 +52,15 @@ for (Vendor in Vendors) {
   ### getting comments for posts
   VendorCommentsTable <- NULL
   for (i in VendorPosts$id) { 
-    dt <- getPost(post=i, n=2000, token=fb_oauth, likes=FALSE)   #likes=FALSE: otherwise run Error, prob. bug 
-    if (length(dt$comments$id) > 0) {
-      dt <- data.table ( dt$comments) 
-      dt [, created_wk := paste(format(as.Date(created_time), "%y"),    #1st jan is always wk1, not ISO8601
-                                sprintf("w%02i", as.numeric(strftime(created_time, "%j")) %/% 7L + 1L), sep="::")]
-      dt [,"PostID"] <- i
-      VendorCommentsTable <- rbind (VendorCommentsTable, dt)
+    if (VendorPosts [id ==i, comments_count] >0) {
+      dt <- getPost(post=i, n=2000, token=fb_oauth, likes=FALSE)   #likes=FALSE: otherwise run Error, prob. bug 
+      if (length(dt$comments$id) > 0) {
+        dt <- data.table ( dt$comments) 
+        dt [, created_wk := paste(format(as.Date(created_time), "%y"),    #1st jan is always wk1, not ISO8601
+                                  sprintf("w%02i", as.numeric(strftime(created_time, "%j")) %/% 7L + 1L), sep="::")]
+        dt [,"PostID"] <- i
+        VendorCommentsTable <- rbind (VendorCommentsTable, dt)
+      }
     }
   }
   ### Renaming columns in comment table: adding "Comment_" to the beginning
