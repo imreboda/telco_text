@@ -1,8 +1,10 @@
 # Telco Posts
 
-This is a term assignment of the Unstructured Text Analysis Seminar at CEU in the 2018 winter semester.
+This was a term assignment of the Unstructured Text Analysis Seminar at CEU in the 2018 winter semester.
 
 The attached R scripts look at the Facebook pages of a few telco and related vendors (to some extent related to telcos' traditional or new business segments), and present / compare their key marketing themes during the past few quarters. Also, does basic sentiment scoring on the comments along the time.
+
+**Note: Facebook changed its access policy since, so these scripts became outdated**
 
 It consists of two R scripts: 
 - one is reading posts and comments from Facebook and doing some text mining,
